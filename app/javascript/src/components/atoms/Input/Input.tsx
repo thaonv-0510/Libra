@@ -32,7 +32,7 @@ const TextError = styled.p`
 `
 
 interface Props {
-  hasError: boolean;
+  hasError?: boolean;
   errorMessage?: string;
 }
 

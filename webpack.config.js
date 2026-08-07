@@ -14,8 +14,8 @@ module.exports = {
     application: "./app/javascript/src/App.tsx"
   },
   output: {
-    filename: "application.js",
-    sourceMapFilename: "application.js.map",
+    filename: "[name].js",
+    sourceMapFilename: "[name].js.map",
     path: path.resolve(__dirname, "app/assets/builds"),
   },
   plugins: [

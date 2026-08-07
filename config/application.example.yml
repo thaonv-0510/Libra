@@ -1,0 +1,8 @@
+development:
+  DB_USERNAME: example
+  DB_PASSWORD: example
+  DB_HOST: example
+test:
+  DB_USERNAME: root
+  DB_PASSWORD: "123456"
+  DB_HOST: 127.0.0.1

@@ -15,7 +15,7 @@ import {
   LoadingSpan,
 } from './LoginForm.style';
 import axios from 'axios';
-import { accessTokenAtom } from '@src/states/sessions';
+import { accessTokenAtom, currentUserAtom } from '@src/states/sessions';
 import { useSetRecoilState } from 'recoil';
 
 const LoginForm: React.FC = () => {
@@ -24,6 +24,7 @@ const LoginForm: React.FC = () => {
   const [hasError, setError] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const setAccessToken = useSetRecoilState(accessTokenAtom);
+  const setCurrentUser = useSetRecoilState(currentUserAtom);
   const navigate = useNavigate();
 
   async function handleLogin(event) {
@@ -41,6 +42,7 @@ const LoginForm: React.FC = () => {
     }).then((res) => {
       const {status, data} = res;
       setAccessToken(data.token);
+      setCurrentUser(data.user);
 
       if(status == 200) navigate("/");
     }).catch((err) => {
